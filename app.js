@@ -14,7 +14,7 @@ function actualizarListaAmigos() {
 
 function sortearAmigo() {
   if (amigos.length < 4) {
-    alert('Necesitas al menos 2 amigos para el sorteo.');
+    alert('4');
     return;
   }
   
