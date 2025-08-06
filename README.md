@@ -2,7 +2,7 @@
 
       # Juego del Amigo Secreto 🎁
 
-Este proyecto es una aplicación web para sortear un **amigo secreto** entre 4 amigos: **Camila, Nacho, Emma y Mila**.
+Este proyecto es una aplicación web para sortear un **amigo secreto**
 
 ## 📂 Archivos
 
@@ -21,5 +21,5 @@ Este proyecto es una aplicación web para sortear un **amigo secreto** entre 4 a
 ## 🛡️ Reglas
 
 - Nadie puede ser su propio amigo secreto.
-- 
+  
 ¡Diviértete!
