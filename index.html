@@ -1,27 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Amigo Secreto</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amigo Secreto 🎁</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <h1>Juego del Amigo Secreto 🎁</h1>
 
-    <label for="nombre">Selecciona tu nombre:</label>
-    <select id="nombre">
-      <option value="">-- Elige tu nombre --</option>
-      <option value="Camila">Camila</option>
-      <option value="Nacho">Nacho</option>
-      <option value="Emma">Emma</option>
-      <option value="Mila">Mila</option>
-    </select>
+    <h2>Participantes</h2>
+    <ul id="listaAmigos"></ul>
 
-    <button id="sortear">Descubrir Amigo Secreto</button>
+    <div class="botones">
+      <button onclick="sortearAmigo()">🎲 Sortear</button>
+      <button onclick="reiniciar()">🔄 Reiniciar</button>
+    </div>
 
-    <div id="resultado" class="resultado"></div>
+    <div id="resultado"></div>
   </div>
 
   <script src="app.js"></script>
