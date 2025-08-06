@@ -1,26 +1,66 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Amigo Secreto 🎁</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amigo Secreto</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://use.typekit.net/zgk2iax.css">
+    <link rel="shortcut icon"
+        href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyZW0iIGhlaWdodD0iMmVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMwNTA2MjYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTEyIDZhMy41IDMuNSAwIDEgMCAwIDdhMy41IDMuNSAwIDAgMCAwLTdtLTEuNSA4YTQgNCAwIDAgMC00IDRhMiAyIDAgMCAwIDIgMmg3YTIgMiAwIDAgMCAyLTJhNCA0IDAgMCAwLTQtNHptNi44Mi0zLjA5NmE1LjUxIDUuNTEgMCAwIDAtMi43OTctNi4yOTNhMy41IDMuNSAwIDEgMSAyLjc5NiA2LjI5MlpNMTkuNSAxOGguNWEyIDIgMCAwIDAgMi0yYTQgNCAwIDAgMC00LTRoLTEuMWE1LjUgNS41IDAgMCAxLS40NzEuNzYyQTYgNiAwIDAgMSAxOS41IDE4TTQgNy41YTMuNSAzLjUgMCAwIDEgNS40NzctMi44ODlhNS41IDUuNSAwIDAgMC0yLjc5NiA2LjI5M0EzLjUgMy41IDAgMCAxIDQgNy41TTcuMSAxMkg2YTQgNCAwIDAgMC00IDRhMiAyIDAgMCAwIDIgMmguNWE2IDYgMCAwIDEgMy4wNzEtNS4yMzhBNS41IDUuNSAwIDAgMSA3LjEgMTIiIGNsaXAtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg=="
+        type="image/x-icon">
 </head>
+
 <body>
-  <div class="container">
-    <h1>Juego del Amigo Secreto 🎁</h1>
+    <header class="header">
+        <h1>Amigo Secreto</h1>
+        <p>¡Bienvenido a la app de Amigo Secreto!</p>
+    </header>
+    <main class="main">
+        <form id="amigoSecreto">
+            <label for="nombre">Agregar Participante</label>
+            <input type="text" name="nombre" id="nombre" />
+            <button type="submit" class="button">Agregar</button>
+        </form>
 
-    <h2>Participantes</h2>
-    <ul id="listaAmigos"></ul>
+        <div class="listaParticipantes" id="divParticipantes">
+            <h2>Lista de Participantes</h2>
+            <ul id="listaParticipantes"></ul>
+            <button id="iniciarJuego" class="button">Iniciar Juego</button>
+        </div>
 
-    <div class="botones">
-      <button onclick="sortearAmigo()">🎲 Sortear</button>
-      <button onclick="reiniciar()">🔄 Reiniciar</button>
-    </div>
 
-    <div id="resultado"></div>
-  </div>
+        <div class="inicioSorteo" id="inicioSorteo">
+            <h3 id="reglasJuegoTitulo" class="reglasJuegoTitulo">Reglas del Juego</h3>
+            <ul id="reglasJuego">
+                <li>1. Cada participante solo tiene una sola oportunidad de volver a sortear en caso de que le toque a
+                    si mismo.</li>
+            </ul>
 
-  <script src="app.js"></script>
+            <p id="mensajeFinal" class="mensajeFinal"> ¡El juego del Amigo Secreto ha terminado!<br>
+                
+            </p>
+            <button id="btnReiniciarJuego" class="btnReiniciarJuego">Reiniciar Juego</button>
+            <button id="sorteo" class="sorteo button"> Iniciar Sorteo</button>
+        </div>
+
+        <!-- Modal de resultado -->
+        <div id="resultadoModal" class="modal">
+            <div class="modal-content">
+                <p id="amigoTexto" class="amigoTexto"></p>
+                <div class="modal-buttons">
+                    <button id="btn-reintentar" class="button">Volver a sortear</button>
+                    <button id="btn-siguiente" class="button">Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>Gracias por participar</p>
+    </footer>
+
+    <script src="app.js"></script>
 </body>
+
 </html>
