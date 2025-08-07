@@ -1,4 +1,4 @@
-      # Juego del Amigo Secreto 🎁
+      ## Juego del Amigo Secreto 🎁
 
 <img width="1523" height="774" alt="amigosecreto" src="https://github.com/user-attachments/assets/6b8c548c-14e7-4a66-a8df-f6bae9d44a5e" />
 
