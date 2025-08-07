@@ -1,67 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <title>Amigo Secreto</title>
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="https://use.typekit.net/zgk2iax.css">
-    <link rel="shortcut icon"
-        href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyZW0iIGhlaWdodD0iMmVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMwNTA2MjYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTEyIDZhMy41IDMuNSAwIDEgMCAwIDdhMy41IDMuNSAwIDAgMCAwLTdtLTEuNSA4YTQgNCAwIDAgMC00IDRhMiAyIDAgMCAwIDIgMmg3YTIgMiAwIDAgMCAyLTJhNCA0IDAgMCAwLTQtNHptNi44Mi0zLjA5NmE1LjUxIDUuNTEgMCAwIDAtMi43OTctNi4yOTNhMy41IDMuNSAwIDEgMSAyLjc5NiA2LjI5MlpNMTkuNSAxOGguNWEyIDIgMCAwIDAgMi0yYTQgNCAwIDAgMC00LTRoLTEuMWE1LjUgNS41IDAgMCAxLS40NzEuNzYyQTYgNiAwIDAgMSAxOS41IDE4TTQgNy41YTMuNSAzLjUgMCAwIDEgNS40NzctMi44ODlhNS41IDUuNSAwIDAgMC0yLjc5NiA2LjI5M0EzLjUgMy41IDAgMCAxIDQgNy41TTcuMSAxMkg2YTQgNCAwIDAgMC00IDRhMiAyIDAgMCAwIDIgMmguNWE2IDYgMCAwIDEgMy4wNzEtNS4yMzhBNS41IDUuNSAwIDAgMSA3LjEgMTIiIGNsaXAtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg=="
-        type="image/x-icon">
 </head>
 
 <body>
-    <header class="header">
-        <h1>Amigo Secreto</h1>
-    </header>
-    <main class="main">
-        <form id="amigoSecreto">
-            <label for="nombre">Agregar Participante</label>
-            <input type="text" name="nombre" id="nombre" />
-            <button type="submit" class="button">Agregar</button>
-        </form>
-
-        <div class="listaParticipantes" id="divParticipantes">
-            <h2>Lista de Participantes</h2>
-            <ul id="listaParticipantes"></ul>
-            <button id="iniciarJuego" class="button">Iniciar Juego</button>
-        </div>
-
-
-        <div class="inicioSorteo" id="inicioSorteo">
-            <h3 id="reglasJuegoTitulo" class="reglasJuegoTitulo">Reglas del Juego</h3>
-            <ul id="reglasJuego">
-                <li>1. Cada participante solo tiene una sola oportunidad de volver a sortear en caso de que le toque a
-                    si mismo.</li>
-            </ul>
-
-            <p id="mensajeFinal" class="mensajeFinal"> ¡El juego del Amigo Secreto ha terminado!<br>
-                
-            </p>
-            <button id="btnReiniciarJuego" class="btnReiniciarJuego">Reiniciar Juego</button>
-            <button id="sorteo" class="sorteo button"> Iniciar Sorteo</button>
-        </div>
-
-        <!-- Modal de resultado -->
-        <div id="resultadoModal" class="modal">
-            <div class="modal-content">
-                <p id="amigoTexto" class="amigoTexto"></p>
-                <div class="modal-buttons">
-                    <button id="btn-reintentar" class="button">Volver a sortear</button>
-                    <button id="btn-siguiente" class="button">Siguiente</button>
-                </div>
+    <main class="main-content">
+        <header class="header-banner">
+            <h1 class="main-title">Amigo Secreto</h1>
+            <img src="assets/amigo-secreto.png" alt="Imagen representativa de amigo secreto">
+        </header>
+        <section class="input-section">
+            <h2 class="section-title">Agrega los nombres de tus amigos</h2>
+            <div class="input-wrapper">
+                <input type="text" id="nombre" class="input-name" placeholder="Escribe un nombre" autocomplete="off" maxlength="30">
+                <button class="button-add" onclick="agregarNombre()">Añadir</button>
             </div>
-        </div>
+            <ul id="listaNombres" class="name-list" aria-labelledby="listaNombres" role="list"></ul>
+            <div class="button-container">
+                <button class="button-draw" onclick="sortearAmigo()" aria-label="Sortear amigo secreto">
+                    <img src="assets/imgsorteo.jpg" alt="Ícono para sortear">
+                    Sortear amigo
+                </button>
+                <button class="button-clear" onclick="limpiarNombres()" aria-label="Limpiar nombres">
+                    <img src="assets/descarga.jpg" alt="Ícono para limpiar">
+                    Limpiar nombres
+                </button>
+            </div>
+            <ul id="resultado" class="result-list" aria-live="polite"></ul>
+        </section>
     </main>
-    <footer class="footer">
-        <p>Gracias por participar</p>
-    </footer>
-
     <script src="app.js"></script>
 </body>
-
 </html>
-
-
